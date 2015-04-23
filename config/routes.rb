@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'courses/show'
   get 'courses' => 'courses#index'
   get 'signup' => 'users#new'
-  resources :users, :course_plans, :semesters, :years, :courses, :course_instances
+  resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :semester_definitions
   resources :courses do 
     collection do
       get 'add_course_from_search', action: :add_course_to_course_plan
@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
     end
   end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
