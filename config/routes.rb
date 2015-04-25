@@ -12,8 +12,7 @@ Rails.application.routes.draw do
   get 'courses/show'
   get 'courses' => 'courses#index'
   get 'signup' => 'users#new'
-  get "semester_definitions/:update" => "semester_definitions#show"
-  resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :semester_definitions
+  resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :prerequisites, :semester_definitions
   post 'semesters/:id/add_courses' => 'semesters#add_courses', as: :add_courses_to_semester
   resources :courses do
     collection do

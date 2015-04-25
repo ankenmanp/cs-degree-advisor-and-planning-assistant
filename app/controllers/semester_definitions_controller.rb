@@ -14,7 +14,6 @@ class SemesterDefinitionsController < ApplicationController
     @semester_definition = SemesterDefinition.where(id: params[:id]).take
     @semester_definition.update(definition_params)
     render :text => ""
-       
   end
 
     def definition_params

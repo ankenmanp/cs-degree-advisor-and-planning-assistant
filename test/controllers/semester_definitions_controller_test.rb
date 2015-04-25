@@ -8,13 +8,13 @@ class SemesterDefinitionsControllerTest < ActionController::TestCase
     @year = FactoryGirl.create :year, course_plan_id: @course_plan.id
     @semester = FactoryGirl.create :semester, year_id: @year.id
     @winterim = FactoryGirl.create :semester_definition, name: "Winterim"
-    end
+  end
     
 
   test "should create semester definition" do
     assert_difference('SemesterDefinition.count') do
       post :create, semester_definition: {name: "Test", in_year_position: 1}
-    end
+  end
 end
 
   test "should update semester definition name " do
