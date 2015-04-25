@@ -13,7 +13,7 @@ class SemesterDefinitionsControllerTest < ActionController::TestCase
 
   test "should create semester definition" do
     assert_difference('SemesterDefinition.count') do
-      post :create, semester_definition: {name: "Test"}
+      post :create, semester_definition: {name: "Test", in_year_position: 1}
     end
 end
 

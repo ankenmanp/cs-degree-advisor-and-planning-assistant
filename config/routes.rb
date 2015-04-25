@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,8 +12,10 @@ Rails.application.routes.draw do
   get 'courses/show'
   get 'courses' => 'courses#index'
   get 'signup' => 'users#new'
+  get "semester_definitions/:update" => "semester_definitions#show"
   resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :semester_definitions
-  resources :courses do 
+  post 'semesters/:id/add_courses' => 'semesters#add_courses', as: :add_courses_to_semester
+  resources :courses do
     collection do
       get 'add_course_from_search', action: :add_course_to_course_plan
     end
@@ -21,10 +24,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, :courses, :course_plans, :semesters, :years, :course_instances
-
     end
   end
-  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
