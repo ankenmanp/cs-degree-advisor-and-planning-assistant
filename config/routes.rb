@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'course_plans#index'
+  root 'splash_screens#index'
+
+  get 'splash_screens/index' => 'splash_screens#index'
 
   get 'course_plans/new'
   
