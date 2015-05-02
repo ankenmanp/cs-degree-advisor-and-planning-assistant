@@ -1,0 +1,23 @@
+// Place all the styles related to the SplashScreens controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#splash-screen-background {
+  height:100%;
+  width:100%;
+  background: image-url("apple_stuff_smaller.jpg");
+  background-repeat:no-repeat;
+  background-position: center center;
+  display:table;
+  > div {
+    background: rgba(0, 0, 0, 0.65);
+    display:table-cell;
+    vertical-align: middle;
+    #splash-screen-text-container * {
+      color:white;
+      text-shadow:2px 2px black;
+    }
+    #splash-screen-text-container h1 {
+      font-size:5rem;
+    }
+  }
+}

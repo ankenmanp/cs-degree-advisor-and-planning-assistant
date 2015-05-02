@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'course_plans#index'
+  root 'splash_screens#index'
+
+  get 'splash_screens/index' => 'splash_screens#index'
 
   get 'course_plans/new'
   
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
   get 'courses/show'
   get 'courses' => 'courses#index'
   get 'signup' => 'users#new'
-  resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :prerequisites
+  resources :users, :course_plans, :semesters, :years, :courses, :course_instances, :prerequisites, :semester_definitions
   post 'semesters/:id/add_courses' => 'semesters#add_courses', as: :add_courses_to_semester
   resources :courses do
     collection do
