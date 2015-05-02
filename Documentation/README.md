@@ -1,5 +1,10 @@
 # Documentation 
-This directory contains various pieces of documentation around the CS Degree Advisory and Planning Assistant. 
+This directory contains various pieces of documentation around the CS Degree Advisory and Planning Assistant.
+ 
+## API Documentation
+ The documentation for the API are included.  They are in HTML format as well as a markdown format
+ 
+ [API Documentation](API_Documentation)
 
 ## Domain Model
 Included is a few iterations of the Domain Model.  Also, the plain english description of the domain,
