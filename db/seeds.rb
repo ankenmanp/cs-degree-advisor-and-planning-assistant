@@ -21,7 +21,14 @@ SemesterDefinition.create!(id:5, name:"Fall", in_year_position: 5, max_credit_ho
 
 Semester.create!(semester_definition_id: 1, year_id: 1)
 
-# Courses required for CS 
+# Courses required for CS
+comput_world = Course.create!(name: 'Living in a Computing World' , subject: 'CS', call_number: 1030 , credit_hours:  4 , 
+description: "This course provides fundamentals needed to effectively cope with, understand, and be successful in a world 
+with pervasive computing. The coursework explores impacts of computing (from social, ethical, economic, technical, legal,
+ philosophical, and cognitive perspectives) and the related aspects of creativity, innovation, problem solving, critical thinking, 
+ collaborative teamwork, and multi-modal communication. Students participate in active-learning experiences and create materials using 
+ iterative processes similar to those used by artists, musicians, and engineers.") 
+ 
 cs1 = Course.create!(name: 'Computer Science 1', subject: 'CS', call_number: 1050, credit_hours:4,
 description: "This is the first course in the computer  science core sequence. Students will learn a modern programming
 language and the basic skills needed to analyze problems and construct programs for  their solutions. The emphasis of
@@ -44,11 +51,42 @@ course presents the functional organization of computers, multicore and multithr
 storage, multiprocessor and multicomputer parallel architectures, and error detecting/correcting codes. Students learn
 assembly language programming and create software using a contemporary development environment.")
 
+human_computer = Course.create!(name: 'Human-Computer Interaction', subject: 'CS' , call_number: 3140, credit_hours: 4,
+ description: "This course explores and develops knowledge that enables computer scientists to improve human-computer interaction 
+through the exploitation of cognitive science theories about how people interact with their environments. Topics include: how people
+interact with each other and with computers; insights provided by models of cognition, memory, perception, attention, and thought;
+defining, specifying and assessing usability; and the roles of computer interface elements and behaviors. Students will examine 
+theories and use interactive computer systems as the vehicles for the study of human-computer interaction and design for usability.
+Students will evaluate the effectiveness of existing interfaces and will experiment with authoring their own.")
+
 theory = Course.create!(name: 'Introduction to the Theory of Computation', subject: 'CS', call_number: 3240, credit_hours:4,
 description: "This course explores language theory and computability. Language theory includes: regular expressions,
 regular languages, and finite automata (deterministic and nondeterministic); context-free languages and pushdown
 automata; and language grammars. Computability includes: Tuning machines and their computing power; unsolvable problems;
 and intractable problems (NP-Completeness).")
+
+oo = Course.create!(name: 'Object-Oriented Software Development' , subject: 'CS', call_number: 3280, credit_hours: 4, 
+description: "This is an upper-division software development class that focuses on the object-oriented programming paradigm.
+Object-oriented analysis, design, and development will be explored in some depth with emphasis on object definition, abstraction,
+polymorphism, encapsulation, and inheritance. Abstract class definitions are developed for a number of common objects and data 
+structures and derivative classes and subclasses are developed from these definitions. Students will develop a thorough understanding 
+of an object-oriented programming language such as C++ or Smalltalk.")
+
+architecture = Course.create!(name: 'Computer Architecture', subject: 'CS', call_number: 3400, credit_hours: 4, 
+description: "Computer architecture concepts are extended to include advanced architectural concepts based on the 
+quantitative analysis and evaluation of modern computing systems. These include advanced instruction set architecture 
+designs, multilevel and set associative caches, advanced pipelining, out-of-order processors including superscalar and 
+VLIW techniques, microprogramming concepts, multiprocessing architectures, advanced memory organizations, input/output, 
+and network-oriented interconnections.")
+
+graphics = Course.create!(name: 'Computer Graphics', subject: 'CS', call_number: 3510, credit_hours: 4, 
+description: "This course is a survey of graphics hardware and software. The topics covered include raster 
+scan displays, windowing transformation, algorithms for vector generators, clipping, area fill, space transformations
+in two and three dimensions, perspective viewing methods, and graphical input. Other topics will be chosen from hidden 
+surface processing, curve and surface modeling, fractals and animation. Programming projects will be done using a standard 
+graphics function library. This is a course in the principles of computer graphics; it is not a course in using existing 
+commercial software for artistic design or drafting. Students wanting design or drafting courses should consult offerings of the Art Department.
+")
 
 ppl = Course.create!(name: 'Principles of Programming Languages', subject: 'CS', call_number: 3210, credit_hours:4,
 description: "This course traces the evolution of programming languages and identifies and analyzes the contributions
@@ -64,6 +102,11 @@ Topics covered include: operating system modes, structuring methods, process and
 concurrency, inter-process communication, memory management, file system organization (in both stand-alone and networked
 environments), and system security. This course will require students to write programs that implement some operating
 system functions.")
+
+db = Course.create!(name: 'Principles of Database Systems', subject: 'CS', call_number: 3810, credit_hours: 4, 
+description: "This course covers the principles and methodologies of database design, and techniques for database 
+application development. The topics covered include relational algebra, SQL queries, normalization, entity-relationship model,
+SQL/Host-language interface, stored procedure, object-oriented databases, and semi-structured databases.")
 
 algorithms = Course.create!(name: 'Algorithms and Algorithm Analysis', subject: 'CS', call_number: 4050, credit_hours:4, description:
 "The emphasis of this course is on the design, analysis, and evaluation of efficient algorithms for a wide variety of
@@ -81,15 +124,21 @@ practices = Course.create!(name: 'Software Engineering Practices', subject: 'CS'
 and apply the principles to the development of a real-world project. Projects will be solicited from industry and
 progress will be evaluated in conjunction with industry representatives.")
 
-Prerequisite.create!(this_course_id:3, target_course_id:1)
 Prerequisite.create!(this_course_id:4, target_course_id:2)
+Prerequisite.create!(this_course_id:5, target_course_id:2)
 Prerequisite.create!(this_course_id:5, target_course_id:3)
-Prerequisite.create!(this_course_id:5, target_course_id:4)
-Prerequisite.create!(this_course_id:6, target_course_id:3)
-Prerequisite.create!(this_course_id:7, target_course_id:3)
+Prerequisite.create!(this_course_id:6, target_course_id:4)
 Prerequisite.create!(this_course_id:7, target_course_id:4)
-Prerequisite.create!(this_course_id:8, target_course_id:6)
+Prerequisite.create!(this_course_id:8, target_course_id:4)
+Prerequisite.create!(this_course_id:9, target_course_id:4)
 Prerequisite.create!(this_course_id:9, target_course_id:5)
-Prerequisite.create!(this_course_id:9, target_course_id:6)
-Prerequisite.create!(this_course_id:10, target_course_id:9)
+Prerequisite.create!(this_course_id:10, target_course_id:4)
+Prerequisite.create!(this_course_id:11, target_course_id:4)
+Prerequisite.create!(this_course_id:11, target_course_id:7)
+Prerequisite.create!(this_course_id:12, target_course_id:4)
+Prerequisite.create!(this_course_id:12, target_course_id:5)
+Prerequisite.create!(this_course_id:13, target_course_id:4)
+Prerequisite.create!(this_course_id:14, target_course_id:7)
+Prerequisite.create!(this_course_id:15, target_course_id:11)
+Prerequisite.create!(this_course_id:16, target_course_id:15)
 
