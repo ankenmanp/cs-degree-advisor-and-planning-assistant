@@ -62,6 +62,10 @@ Word to the wise: installing ri and rdoc takes a very long time. You can skip th
 
 ## General Information
 
+### Documentation
+See the [Documentation directory](Documentation/README.md) for design artifacts, user stories, the Rally backlog, and
+other materials associated with this project.
+
 ### Cloning the repository
 
 From the desired directory on your computer, run this command to clone the project:

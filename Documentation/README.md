@@ -34,6 +34,7 @@ All the documents are in pdf format.
     
 ## Others Past Work
 One of the first tasks was to collect all the useful information for this project created by different groups in a
-previous semester.  This work is in pdf format.
+previous semester.  Also included is the originally supplied packet of information entitled
+"CSAdvisoryPlanner_CS4250Fall2014_Final Edits." This work is in pdf format.
 
 [Useful Past Work](Useful_Past_Work)
